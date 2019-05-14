@@ -32,7 +32,8 @@ export const initRouter = () => {
   var routerData
   if (!gotRouter) {
     getMockMenuData().then(res => {
-      routerData = res.data // 后台拿到路由
+      routerData = res.data.data // 后台拿到路由
+      console.log('1', routerData)
       localSave('dynamicRouter', JSON.stringify(routerData)) // 存储路由到localStorage
       gotRouter = filterAsyncRouter(routerData) // 过滤路由,路由组件转换
       store.commit('updateMenuList', gotRouter)

@@ -1,4 +1,4 @@
-import { login, logout, getUserInfo } from '@/api/user'
+import { login, getUserInfo } from '@/api/user'
 import { setToken, getToken, localSave } from '@/libs/util'
 import { initRouter } from '@/libs/router-util' // ①新增  引入动态菜单渲染
 export default {
@@ -68,7 +68,7 @@ export default {
         //     reject(err)
         //   })
         // 如果你的退出登录无需请求接口，则可以直接使用下面三行代码而无需使用logout调用接口
-
+        console.log('退出，清空本地路由')
         localSave('dynamicRouter', []) // 清空本地路由
         commit('setToken', '')
         commit('setAccess', [])
