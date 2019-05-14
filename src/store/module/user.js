@@ -43,7 +43,7 @@ export default {
           password
         })
           .then(res => {
-            const data = res.data
+            const data = res.data.data
             commit('setToken', data.token)
             initRouter()
             resolve()
